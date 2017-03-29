@@ -1,11 +1,17 @@
-# email-alert-middleware
-Used Node and Express to set up emailing errors from a server
+Starter files for email alert middleware challenge
+===================================================
 
-## Server meets the following requirements:
+https://github.com/Thinkful-Ed/node-email-alert-middleware-challenge-starter
 
-1. In the event of a FooError or BarError, the app should send an email alert to a recipient you specify in a config file (.env).
-2. BizzErrors (roughly one-third of the time) should not trigger email alerts.
+For the email sending feature to work, you need to set four configuration variables inside a `.env` file:
 
-3. Each alert email should have a subject that looks like this: ALERT: a BarError occurred.
-4. The alert email should have a from name and from email address. The from name should be something like "SERVICE ALERTS".
-5. The body should summarize what happened and include the error message (err.message) and the stack trace (err.stack).
+```
+ALERT_FROM_EMAIL='account-name@gmail.com'
+ALERT_FROM_NAME='SERVICE ALERTS'
+ALERT_TO_EMAIL='service-alert-recipient@gmail.com'
+SMTP_URL='smtps://account-name@gmail.com:password@smtp.gmail.com'
+```
+
+DO NOT hard code these into your source code. They should be set as environment
+variables on your server, and your application code should access them via
+`process.env.myVar`.
