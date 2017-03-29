@@ -5,17 +5,12 @@ const {logger} = require('./utilities/logger');
 
 // stored in `.env` -- never store passwords, api keys
 // etc. inside source code
-const {SMTP_URL,ALERT_FROM_NAME, ALERT_TO_EMAIL,ALERT_FROM_EMAIL} = process.env;
+const {SMTP_URL} = process.env;
 
 
 
-const emailData = {
-  from: ALERT_FROM_EMAIL,
-  to: ALERT_TO_EMAIL,
-  subject: ALERT_FROM_NAME,
-  text: "",
-  html: "<p></p>"
-}
+
+
 
 // `emailData` is an object that looks like this:
 // {
